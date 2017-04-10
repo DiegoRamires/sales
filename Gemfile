@@ -25,6 +25,13 @@ gem 'rails_admin'
 gem 'devise'
 gem 'cancancan'
 gem 'carrierwave'
+gem 'rails_admin_rollincode', :git => 'git@github.com:DiegoRamires/rollincode_custom.git'
+
+# Gem para gerar os pdfs
+gem 'prawn-rails'
+# Gem para gerar os gráficos
+gem 'gruff'
+gem 'rmagick'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
