@@ -1,5 +1,14 @@
 RailsAdmin.config do |config|
 
+# Mudar nome da aplicação através desse array
+  config.main_app_name = ["Representantes Comerciais", ""]
+
+  config.navigation_static_links = {
+    'Google' => 'http://www.google.com'
+  }
+
+  config.navigation_static_label = "Links Úteis"
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -25,6 +34,7 @@ RailsAdmin.config do |config|
 
 
 config.model Sale do
+  navigation_icon 'fa fa-money'
   create do
     field  :client
     field  :sale_date
@@ -102,6 +112,32 @@ config.model Client do
 
   end
 end
+
+  config.model Discount do
+    parent Product
+  end
+
+  config.model Sale do
+    parent User
+    weight -2
+  end
+
+  config.model Comission do
+    parent User
+    weight -1
+  end
+
+  config.model Client do
+    parent User
+  end
+
+  config.model ProductQuantity do
+    visible false
+  end
+
+  config.model Address do
+    visible false
+  end
 
 config.model ProductQuantity do
   visible false
